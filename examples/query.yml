@@ -1,0 +1,19 @@
+in:
+  type: search_analytics
+  client_id: xxxxxxx.apps.googleusercontent.com
+  client_secret: xxxxxxxxxx
+  refresh_token: 1/xxxxxxxxxx
+  site_url: https://sem-technology.info/
+  start_date: 2017-12-01
+  end_date: 2017-12-01
+  dimensions:
+    - query
+    - device
+  dimension_filter_groups:
+    - group_type: and
+      filters:
+        - dimension: country
+          operator: equals
+          expression: jpn
+out:
+  type: stdout
