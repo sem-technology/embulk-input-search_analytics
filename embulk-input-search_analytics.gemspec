@@ -13,7 +13,11 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "signet"
+  # TODO
+  # signet 0.12.0 require >= Ruby 2.4.
+  # Embulk 0.9 use JRuby 9.1.X.Y and It compatible Ruby 2.3.
+  # So, Force install signet < 0.12.
+  spec.add_dependency "signet", "~> 0.7", "< 0.12.0"
   spec.add_dependency "google-api-client", "~> 0.9.11"
   spec.add_development_dependency 'embulk', ['>= 0.8.38']
   spec.add_development_dependency 'bundler', ['>= 1.10.6']
